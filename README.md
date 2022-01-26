@@ -33,7 +33,7 @@ I will update the repository every time there is a new version of PHPServerMonit
 ```bash
 docker build --no-cache -t alwynpan/phpservermonitor:latest \
                         -t alwynpan/phpservermonitor:3.5.2 \
-                        -f dockerfile/Dockerfile .
+                        -f dockerfile/latest/Dockerfile .
 ```
 
 ## Run the image

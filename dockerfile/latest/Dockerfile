@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:7.4.27-zts-bullseye
 
 ARG VERSION=3.5.2
 
