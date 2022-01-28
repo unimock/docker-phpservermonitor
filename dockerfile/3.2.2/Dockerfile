@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:7.3-apache-bullseye
 
 ARG VERSION=3.3.2
 ENV PHPMONITOR_URL https://github.com/phpservermon/phpservermon/archive/v$VERSION.tar.gz
