@@ -1,0 +1,18 @@
+services:
+  psm:
+    ##################################################
+    # BUILD section
+    ##################################################
+    build:
+      context: ./dockerfile/latest
+      dockerfile: Dockerfile
+      args:
+        VERSION: 3.5.2
+      x-bake:
+        platforms:
+          - linux/amd64
+          - linux/arm64
+    image: unimock/phpservermonitor:3.5.2-1
+
+# docker buildx bake --push
+

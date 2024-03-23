@@ -1,7 +1,6 @@
 FROM php:7.4-apache-bullseye
 
 ARG VERSION=3.5.2
-
 RUN apt-get update; \
     apt-get upgrade; \
     apt-get -qy install cron curl git wget inetutils-ping; \
@@ -18,9 +17,9 @@ RUN set -x; \
 	touch config.php && chmod 0777 config.php; \
 	php composer.phar install; \
 	cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini; \
-	sed -i 's/;date.timezone =/date.timezone = UTC/' /usr/local/etc/php/php.ini
+	sed -i "s/;date.timezone =/date.timezone = UTC/" /usr/local/etc/php/php.ini
 
-COPY ["dockerfile/latest/entrypoint.sh", "/"]
+COPY entrypoint.sh /
 
 RUN chmod +x /entrypoint.sh
 
